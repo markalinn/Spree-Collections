@@ -1,0 +1,29 @@
+<div class='toolbar'>
+  <ul class='actions'>
+    <li>
+      <%= button_link_to t("new_collection_group"), new_admin_collection_group_url, :icon => 'add', :id => 'admin_new_collection_group_link' %></p>
+    </li>
+  </ul>
+  <br class='clear' />
+</div>
+
+<h1><%= t("collection_groups") %></h1>
+
+<table class="index sortable">
+  <tr>
+    <th><%= t("name") %></th>
+  </tr>
+
+  <% @collection_groups.each do |collection_group| %>
+    <tr id="<%= dom_id(collection_group) %>">
+      <td>
+        <%= collection_group.name %>
+      </td>
+      <td class="actions">
+        <%= link_to_with_icon('edit', t("edit"), edit_admin_collection_group_url(collection_group), :class => 'edit') %>
+        &nbsp;
+        <%= link_to_delete collection_group, {:url => admin_collection_group_url(collection_group) }%>
+      </td>
+    </tr>
+  <% end %>
+</table>

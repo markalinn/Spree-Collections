@@ -1,6 +1,6 @@
 class CreateCollections < ActiveRecord::Migration
   def change
-    create_table :collections do |t|
+    create_table :spree_collections do |t|
       t.string :name
       t.text :description
 

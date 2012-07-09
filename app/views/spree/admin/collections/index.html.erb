@@ -12,6 +12,7 @@
 <table class="index sortable">
   <tr>
     <th><%= t("name") %></th>
+    <th><%= t("description") %></th>
   </tr>
 
   <% @collections.each do |collection| %>
@@ -19,7 +20,12 @@
       <td>
         <%= collection.name %>
       </td>
+      <td>
+        <%= collection.description %>
+      </td>
       <td class="actions">
+      	<%= link_to t("images"), admin_collection_collection_images_url(collection) %>
+      	&nbsp;
         <%= link_to_with_icon('edit', t("edit"), edit_admin_collection_url(collection), :class => 'edit') %>
         &nbsp;
         <%= link_to_delete collection, {:url => admin_collection_url(collection) }%>

@@ -1,8 +1,10 @@
 module Spree
   class CollectionImage < Asset
+    default_scope :order => 'position'
+      
     validate :no_attachment_errors
     has_attached_file :attachment,
-                      :styles => { :mini => '48x48>', :small => '100x100>', :medium => '240x240>', :large => '600x600>' },
+                      :styles => { :mini => '48x48>', :small => '75x150>', :medium => '240x480>', :large => '940x1880>' },
                       :default_style => :medium,
                       :url => '/spree/collection_images/:id/:style/:basename.:extension',
                       :path => ':rails_root/public/spree/collection_images/:id/:style/:basename.:extension'

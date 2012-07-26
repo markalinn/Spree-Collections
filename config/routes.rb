@@ -3,6 +3,9 @@ Spree::Core::Engine.routes.draw do
   
   namespace :admin do
     resources :collections do
+      collection do
+        post :update_positions
+      end
       resources :collection_images do
         collection do
           post :update_positions

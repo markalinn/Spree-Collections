@@ -5,7 +5,7 @@ module Spree
     
       def update_positions
         params[:positions].each do |id, index|
-          HomepageImage.update_all(['position=?', index], ['id=?', id])
+          Collection.update_all(['position=?', index], ['id=?', id])
         end
     
         respond_to do |format|

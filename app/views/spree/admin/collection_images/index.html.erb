@@ -7,7 +7,7 @@
   <br class='clear' />
 </div>
 
-<h1><%= t("collection_images") %></h1>
+<h1><%= link_to @collection.name, admin_collections_url(@collection) %> <%= t("collection_images") %></h1>
 
 <table class="index sortable" data-hook="images_table" data-sortable-link="<%= update_positions_admin_collection_collection_images_url(@collection) %>">
   <tr>

@@ -6,6 +6,10 @@ module Spree
       update.before :set_viewable
       destroy.before :destroy_before
 
+      def index
+        @collection_images = @collection.collection_images.all
+      end
+      
       def update_positions
         params[:positions].each do |id, index|
           CollectionImage.update_all(['position=?', index], ['id=?', id])

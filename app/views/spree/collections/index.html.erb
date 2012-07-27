@@ -1,0 +1,10 @@
+<div id="collections">
+<% @collections.each do |collection| %>
+	<div id="collection">
+		<% if collection.collection_images.first %>
+			<%= image_tag(collection.collection_images.first.attachment.url) %>
+		<% end %>
+		<%= collection.name %>
+	</div>
+<% end %>
+</div>

@@ -1,10 +1,12 @@
 <div id="collections">
+<h1><%= t("collections_index") %></h1>
 <% @collections.each do |collection| %>
 	<div id="collection">
 		<% if collection.collection_images.first %>
-			<%= image_tag(collection.collection_images.first.attachment.url) %>
+			<%= link_to(image_tag(collection.collection_images.first.attachment.url),collection) %>
 		<% end %>
-		<%= collection.name %>
+		<h3><%= link_to collection.name, collection %></h3>
+		<%= collection.description %>
 	</div>
 <% end %>
 </div>

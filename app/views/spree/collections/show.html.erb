@@ -1,0 +1,3 @@
+<% @collection_images.each do |collection_image| %>
+	<%= image_tag(collection_image.attachment.url(:large)) %>
+<% end %>

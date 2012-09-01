@@ -6,5 +6,7 @@ module Spree
     validates_uniqueness_of :name #, :scope => [:collection_group_id]
 
     default_scope :order => 'position'
+    
+    attr_accessible :name, :description
   end
 end

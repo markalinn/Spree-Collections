@@ -15,7 +15,7 @@
   </tr>
 
   <% @collection_images.each do |collection_image| %>
-    <tr id="<%= dom_id(collection_image) %>">
+    <tr id="<%= spree_dom_id collection_image %>">
       <td>
         <span class="handle"></span>
         <%= link_to(image_tag(collection_image.attachment.url(:small)), collection_image.attachment.url(:medium)) %>

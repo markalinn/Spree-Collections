@@ -9,14 +9,14 @@
 
 <h1><%= t("collections") %></h1>
 
-<table class="index sortable" id="listing_collections" data-hook data-sortable-link="<%= update_positions_admin_collections_url %>">
+<table class="index sortable" id="listing_collections" data-hook  data-sortable-link="<%= update_positions_admin_collections_url %>">
   <tr>
     <th><%= t("name") %></th>
     <th><%= t("description") %></th>
   </tr>
 
   <% @collections.each do |collection| %>
-    <tr id="<%= dom_id(collection) %>">
+    <tr id="<%= spree_dom_id collection %>">
       <td>
         <span class="handle"></span>
         <%= collection.name %>

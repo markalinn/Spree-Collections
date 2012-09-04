@@ -5,7 +5,7 @@ module Spree
     validates_presence_of :name #, :collection_group_id
     validates_uniqueness_of :name #, :scope => [:collection_group_id]
 
-    default_scope :order => 'position'
+    default_scope :order => "#{self.table_name}.position"
     
     attr_accessible :name, :description
   end

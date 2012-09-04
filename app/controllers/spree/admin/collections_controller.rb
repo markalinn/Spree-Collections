@@ -1,7 +1,7 @@
 module Spree
   module Admin
     class CollectionsController < ResourceController
-      before_filter :load_collection_groups, :except => 'index'
+      before_filter :load_collection_groups, :except => ['index', 'update_positions']
     
       def update_positions
         params[:positions].each do |id, index|
